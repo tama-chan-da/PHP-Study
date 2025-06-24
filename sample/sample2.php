@@ -3,18 +3,22 @@
 // これはコメントアウトです
 // コメントアウトはプログラムとして認識されず自由に書くことができます。
 
-// for (初期化式; 条件式; 反復式(変化式);)
+// for (初期化式; 条件式; 反復式(変化式))
+echo "forループ\n";
 for ($i = 0; $i < 10; $i++) {
-    echo "$i\n";
+    // echo "i: $i\n";
 }
 
 // 2重ループ
+echo "forループ(二重)\n";
 for ($i = 0; $i < 10; $i++) {
     for ($j = 0; $j < 10; $j++) {
+        // echo "i: $i\n";
+        // echo "j: $j\n";
     }
 }
 
-
+// 配列
 $array = array('Sun', 'Mon', 'Tue');
 echo $array[0];    // Sun が出力される
 echo $array[1];    // Mon が出力される
@@ -44,11 +48,14 @@ echo $array['Tue'];   // Tuesday が出力される
 $color_list = array("Red", "Green", "Blue");
 
 // for
+
+echo "\n配列を使ったforループ\n";
 for ($i = 0; $i < count($color_list); $i++) {
     echo "$color_list[$i]\n"; // Red, Green, Blue が表示される
 }
 
-// 拡張for
+// foreach
+echo "配列を使ったforeachループ\n";
 foreach ($color_list as $color) {
     echo "$color\n"; // Red, Green, Blue が表示される                       
 }
