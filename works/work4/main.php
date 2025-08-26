@@ -10,7 +10,7 @@ showUserStatus($mainUser);
 showUserStatus($subUser);
 
 $mainUser->setName("佐藤");
-$mainUser->setAge(30);
+$mainUser->setAge(21);
 $mainUser->getOlder();
 
 showUserStatus($mainUser);
