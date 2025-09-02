@@ -57,9 +57,18 @@ class Gun
     }
 
     // 拡張マガジンを装着
-    function setExtendedMagazine()
+    function setExtendedMagazine($extendNum)
     {
+        if (!is_int(filter_var($extendNum, \FILTER_VALIDATE_INT,  ['options' => ['min_range' => 1]]))) {
+            if (!is_numeric($extendNum) && intval($extendNum) == $extendNum > 0) {
+                echo "引数は不正です\n";
+                return;
+            }
+        }
+
+
         // 問題4
+
     }
 
     // 拡張マガジンを取外し

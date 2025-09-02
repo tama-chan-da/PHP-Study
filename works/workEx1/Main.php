@@ -17,3 +17,5 @@ $mainWeapon->fire();
 $subWeapon->fire();
 $mainWeapon->echoStatus();
 $subWeapon->echoStatus();
+$mainWeapon->setExtendedMagazine('mhfsd');
+$subWeapon->setExtendedMagazine('tdtjh');
