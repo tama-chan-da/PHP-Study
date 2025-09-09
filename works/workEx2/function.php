@@ -29,14 +29,10 @@ function readBooksData()
 }
 
 // 関数2
-function calcTax($books)
-{
-}
+function calcTax($books) {}
 
 // 関数3
-function findBooks($books, $str)
-{
-}
+function findBooks($books, $str) {}
 
 // データを表示する関数
 function displayBooks($books)

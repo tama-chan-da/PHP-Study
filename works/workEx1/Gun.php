@@ -9,6 +9,8 @@ class Gun
     private $maxMagazine;
     // 残弾
     private $currentMagazine;
+    // 拡張マガジン
+    private $extendNum;
     // ↑フィールド============================
 
     // コンストラクタ
@@ -18,6 +20,7 @@ class Gun
         $this->name = $name;
         $this->maxMagazine = $maxMagazine;
         $this->currentMagazine = $maxMAgazine;
+        $this->extendNum = 0;
     }
 
     // 現在の状態を表示
@@ -59,21 +62,34 @@ class Gun
     // 拡張マガジンを装着
     function setExtendedMagazine($extendNum)
     {
+        // 問題4
+
         if (!is_int(filter_var($extendNum, \FILTER_VALIDATE_INT,  ['options' => ['min_range' => 1]]))) {
             if (!is_numeric($extendNum) && intval($extendNum) == $extendNum > 0) {
                 echo "引数は不正です\n";
                 return;
             }
         }
-
-
-        // 問題4
-
+        $this->maxMagazine = $this->maxMagazine + $extendNum;
+        $this->extendNum = $extendNum;
+        $this->currentMagazine = $this->maxMagazine;
     }
 
     // 拡張マガジンを取外し
     function unsetExtendedMagazine()
     {
         // 問題4
+        if ($this->extendNum <= 0) {
+            echo "拡張マガジンはそうちゃくされていません\n";
+            return;
+        }
+
+        $this->maxMagazine = $this->maxMagazine - $this->extendNum;
+
+        $this->extendNum = 0;
+
+        if ($this->maxMagazine < $this->currentMagazine) {
+            $this->currentMagazine = $this->maxMagazine;
+        }
     }
 }
